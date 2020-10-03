@@ -1,0 +1,15 @@
+version: "2.1"
+
+services:
+  miniweb:
+    container_name: miniweb
+    image: miniweb:latest
+    environment:
+      - MINIWEB_PORT=8808
+      - MINIWEB_LOG_LEVEL=debug
+      - MINIWEB_LOG_LINES=true
+      - MINIWEB_LOG_JSON=true
+    ports:
+      - '8808:8808'
+    restart: always
+    command: sh -c "./miniweb"
